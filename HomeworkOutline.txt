@@ -1,0 +1,39 @@
+How to Compile Sold Items from Ebay's API
+
+Getting Started
+	Developer Account
+	Developer Keys
+
+Making a Call
+	URL structure/values
+	Item filters
+	Aspect Filters
+	Output Selectors
+	
+XML Output
+	Items
+	paginationOutput
+	aspectHistogramContainer
+	
+Organizing Data into Useful Chunks	
+	piecing together relevant XML results and saving into an variable
+	
+Storing Values
+	Saving stuff to mySQL
+
+	
+	 http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems
+  &OPERATION-NAME=findCompletedItems
+  &SERVICE-VERSION=1.13.0
+  &GLOBAL-ID=EBAY-US
+  &SECURITY-APPNAME=SLcoinafa-2536-4ac4-af19-68edaf5f9f6
+  &RESPONSE-DATA-FORMAT=XML
+  &REST-PAYLOAD
+  &categoryId=11970
+  &itemFilter(0).name=SoldItemsOnly
+  &itemFilter(0).value=true
+  &aspectFilter(0).aspectName=Certification
+  &aspectFilter(0).aspectValueName=PCGS
+  &aspectFilter(1).aspectName=Certification
+  &aspectFilter(1).aspectValueName=NGC
+  &outputSelector=AspectHistogram
