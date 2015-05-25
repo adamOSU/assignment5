@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>eBay API Tutorial</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>	
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				<a href = "index.html" class = "navbar-brand">How to Search eBay's Completed Items</a>
+			</div>
+		</div>
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-9">
+					<div class = "panel panel-default">
+						<h2>Completed Items Database</h2>
+
+						<h3>Saving the XML Data to a Database</h3>
+						<p>At this point, all of the heavy lifting is done!  You can rest easy, knowing that in a few short minutes you will have a database full of completed eBay items.  Just a reminder, this is for educational purposes only.  Saving completed item data is a violation of eBay Terms & Conditions.  You have been warned.<br><br>
+						Full tutorials on creating, editing and managing MySQL databases are available all over the internet so I will spare you those details.  Instead, I just wanted to flesh out a quick tweak on our previous PHP program that will allow you to store the item data instead of print it out on the screen.
+						</p>
+						<img src="database.jpg" alt="PHP Program">
+						<p>You can see in this example that we open up a connection to our database and then within the foreach loop, we define the item variables we wish to save and then save them into our database.  With each loop a new item is being added to the database until there are no items left.<br><br>
+
+						And there you have it!  By following these simple instructions, you can use the eBay API to create a quasi-legal database full of market information that you can capitalize on to become a multi-millionaire.  When you do, make sure and donate some of that money to Oregon State since that is where you learned this nifty trick!<br>
+						</p>
+						<br>
+						<br>
+						<a href="xml.html" style="font-size:large;"><- Previous Step</a>
+					</div>
+				</div>
+				<div class = "col-lg-3">
+							<div class = "list-group">
+								<a href="index.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Getting Started</h4>
+									<p class = "list-group-item-text">Sign up for your developer account and make your first API call</p>
+								</a>
+								<a href="calls.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">API Call Structure</h4>
+									<p class = "list-group-item-text">Learn how to create your own API call</p>
+								</a>
+								<a href="filters.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">More On API Calls</h4>
+									<p class = "list-group-item-text">Limit the data returned by your call</p>
+								</a>
+								<a href="xml.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Handling XML Output</h4>
+									<p class = "list-group-item-text">How to deal with the data eBay's API returns</p>
+								</a>
+								<a href="data.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Completed Items Database</h4>
+									<p class = "list-group-item-text">Saving the XML into a MySQL database</p>
+								</a>
+							</div>
+						</div>
+			</div>
+		</div>
+
+		
+	</body>
+
+</html>

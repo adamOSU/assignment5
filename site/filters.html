@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>eBay API Tutorial</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>	
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				<a href = "index.html" class = "navbar-brand">How to Search eBay's Completed Items</a>
+			</div>
+		</div>
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-9">
+					<div class = "panel panel-default">
+						<h2>More On API Calls</h2>
+
+						<h3>Using Filters</h3>
+						<p>When making an API request, we want to make sure we only get the exact information we want.  Including information that is unnecessary not only slows down the request, but makes the processing of data on the backend that much more difficult.  In order to limit what is returned, we use filters.  The two most effective filters to use are the item and aspect filters.
+						</p>
+						<h4>ITEM FILTERS</h4>
+						<p>Item filters are data points that are common to all eBay items.  These include item condition, MaxPrice, FreeShippingOnly, etc.  To narrow our search results, let’s add the SoldItemsOnly item filter.  This will allow us to limit our completed items results to just the ones that actually sold.  We do this by adding the following to the end of our API call:<br><br>
+
+						&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value=true<br><br>
+
+						You will notice that I included two item filters.  The first defines the actual filter name while the second determines the value.  In this case, we only want to see items where SoldItemsOnly = true.  You can include as many item filters in an API call as you want.  Simply increase the number next to itemFilter to designate a different filter.  For example:<br><br>
+
+						&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value=true&itemFilter(1).name=Condition&itemFilter(1).value=New<br><br>
+
+						Our master API call should now look like this:
+						</p>
+						<p style="border: 2px solid #666; padding: 10px; background-color: #ccc;">http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-NAME=FindingService&SERVICE-VERSION=1.13.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=*********&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&categoryId=11970&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value=true</p>
+
+						<h4>ASPECT FILTERS</h4>
+						<p>
+						Aspect filters are data points that are specific to a category on eBay.  These are also known as item specifics and are usually found in the left column of the search results.  When searching for Computers, you may see filters such as RAM, CPU Clock Speed, Ports, etc.  These are all things that would be specific to computers but would not apply to Men’s Clothing, for example.<br><br>
+
+						Aspect filters are a great way to further refine our search results to make sure we are only getting the results we want.  In our example, we now have a result set that includes completed items in the Seated Half Dollar category that have been sold.  Let’s say I want to only see sold coins that have been graded by PCGS.  I would add the following to our API call:<br><br>
+
+						&aspectFilter(0).aspectName=Certification&aspectFilter(0).aspectValueName=PCGS<br><br>
+
+						Just like with item filters, we can include as many aspect filters as we need.  I will include sold coins that have been graded by NGC as well:<br><br>
+
+						&aspectFilter(0).aspectName=Certification&aspectFilter(0).aspectValueName=PCGS&aspectFilter(1).aspectName=Certification&aspectFilter(1).aspectValueName=NGC<br><br>
+						
+						Our complete API call now looks like this:<br><br>
+						</p>
+
+						<p style="border: 2px solid #666; padding: 10px; background-color: #ccc;">http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-NAME=FindingService&SERVICE-VERSION=1.13.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=**********&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&categoryId=11970&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value=true&aspectFilter(0).aspectName=Certification&aspectFilter(0).aspectValueName=PCGS&aspectFilter(1).aspectName=Certification&aspectFilter(1).aspectValueName=NGC</p>
+
+						<br>
+						<br>
+						<a href="calls.html" style="font-size:large;"><- Previous Step   |</a><a href="xml.html" style="font-size:large;">|   Next Step -></a>
+					</div>
+				</div>
+				<div class = "col-lg-3">
+							<div class = "list-group">
+								<a href="index.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Getting Started</h4>
+									<p class = "list-group-item-text">Sign up for your developer account and make your first API call</p>
+								</a>
+								<a href="calls.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">API Call Structure</h4>
+									<p class = "list-group-item-text">Learn how to create your own API call</p>
+								</a>
+								<a href="filters.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">More On API Calls</h4>
+									<p class = "list-group-item-text">Limit the data returned by your call</p>
+								</a>
+								<a href="xml.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Handling XML Output</h4>
+									<p class = "list-group-item-text">How to deal with the data eBay's API returns</p>
+								</a>
+								<a href="data.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Completed Items Database</h4>
+									<p class = "list-group-item-text">Saving the XML into a MySQL database</p>
+								</a>
+							</div>
+							</div>
+						</div>
+			</div>
+		</div>
+
+		
+	</body>
+
+</html>

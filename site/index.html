@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--For this project, I am using Bootstrap to handle all of the heavy lifting for CSS and page layout/design-->
 <html>
 	<head>
 		<title>eBay API Tutorial</title>
@@ -14,7 +15,7 @@
 
 		<div class = "navbar navbar-inverse navbar-static-top">
 			<div class = "container">
-				<a href = "index.htm" class = "navbar-brand">How to Search eBay's Completed Items</a>
+				<a href = "index.html" class = "navbar-brand">How to Search eBay's Completed Items</a>
 			</div>
 		</div>
 
@@ -40,19 +41,34 @@
 						<p style="border: 2px solid #666; padding: 10px; background-color: #ccc;">http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-NAME=FindingService&SERVICE-VERSION=1.13.0&GLOBAL-ID=EBAY-US&SECURITY-APPNAME=*************&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&categoryId=11970</p><br>
 						<p>When working correctly, you should see something like this:</p><br>
 						<img src="successfulCall.jpg" alt="Success" style="width:630px; height:405px">
-
+						<br>
+						<br>
+						<a href="calls.html" style="font-size:large;">Next Step -></a>
 					</div>
 				</div>
 				<div class = "col-lg-3">
 							<div class = "list-group">
-								<a href="index.htm" class = "list-group-item">
+								<a href="index.html" class = "list-group-item">
 									<h4 class = "list-group-item-heading">Getting Started</h4>
 									<p class = "list-group-item-text">Sign up for your developer account and make your first API call</p>
 								</a>
-								<a href="#" class = "list-group-item">
-									<h4 class = "list-group-item-heading">Page 2</h4>
-									<p class = "list-group-item-text">Some text here.</p>
+								<a href="calls.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">API Call Structure</h4>
+									<p class = "list-group-item-text">Learn how to create your own API call</p>
 								</a>
+								<a href="filters.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">More On API Calls</h4>
+									<p class = "list-group-item-text">Limit the data returned by your call</p>
+								</a>
+								<a href="xml.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Handling XML Output</h4>
+									<p class = "list-group-item-text">How to deal with the data eBay's API returns</p>
+								</a>
+								<a href="data.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Completed Items Database</h4>
+									<p class = "list-group-item-text">Saving the XML into a MySQL database</p>
+								</a>
+							</div>
 							</div>
 						</div>
 			</div>

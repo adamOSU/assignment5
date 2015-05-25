@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>eBay API Tutorial</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>	
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				<a href = "index.html" class = "navbar-brand">How to Search eBay's Completed Items</a>
+			</div>
+		</div>
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-9">
+					<div class = "panel panel-default">
+						<h2>Handling XML Output</h2>
+						<p>Now that we have our API call setup how we want it, next we have to deal with the XML output that eBay’s system responds with.  For this example, we will be using a simple PHP program to show how to break down the mass of data returned in the XML.</p>
+						<h3>Simple PHP Program</h3>
+						<p>Here is the simple PHP program:</p>
+						<img src="php.jpg" alt="PHP Program">
+						<p>A quick breakdown of what is going on here.<br><br>
+
+						<b>Line 2 –</b> The simplexml_load_file function turns eBay’s XML response into a manageable object we can reference.  All of the data will be stored in the $xml variable.<br><br>
+
+						<b>Line 4 –</b> We need to check if our call is successful by checking if ack equals Success.  Any other response and things are not working as they should be and an error message will be printed.<br><br>
+
+						<b>Lines 6-12 –</b> Here we create a $results variable where we will be storing all of the individual data points.  We then use a foreach loop to step through every individual item contained in the Search Results XML response.  At this point, you can access any of the item parameters, but for this example we will just take the title and save it in our results variable.  Once the loop is complete, the program will print out a simple table with the titles for every sold half dollar that has been graded by PCGS or NGC.
+						</p>
+						<br>
+						<br>
+						<a href="filters.html" style="font-size:large;"><- Previous Step   |</a><a href="data.html" style="font-size:large;">|   Next Step -></a>
+					</div>
+				</div>
+				<div class = "col-lg-3">
+							<div class = "list-group">
+								<a href="index.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Getting Started</h4>
+									<p class = "list-group-item-text">Sign up for your developer account and make your first API call</p>
+								</a>
+								<a href="calls.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">API Call Structure</h4>
+									<p class = "list-group-item-text">Learn how to create your own API call</p>
+								</a>
+								<a href="filters.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">More On API Calls</h4>
+									<p class = "list-group-item-text">Limit the data returned by your call</p>
+								</a>
+								<a href="xml.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Handling XML Output</h4>
+									<p class = "list-group-item-text">How to deal with the data eBay's API returns</p>
+								</a>
+								<a href="data.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Completed Items Database</h4>
+									<p class = "list-group-item-text">Saving the XML into a MySQL database</p>
+								</a>
+							</div>
+						</div>
+			</div>
+		</div>
+
+		
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>eBay API Tutorial</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>	
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				<a href = "index.html" class = "navbar-brand">How to Search eBay's Completed Items</a>
+			</div>
+		</div>
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-lg-9">
+					<div class = "panel panel-default">
+						<h2>API Call Structure</h2>
+
+						<h3>Anatomy of an API Call</h3>
+						<p>Let’s take a look at the call we just made in order to better understand what is going on:</p>
+
+						<p style="border: 2px solid #666; padding: 10px; background-color: #ccc;"><b>http://svcs.ebay.com/services/search/FindingService/v1 -</b> This is called the Service Endpoint and dictates which API you are calling.  In this case, we are calling the eBay Production API because we want to get results from the live eBay site.  If you wanted to use the eBay Sandbox instead you would need to change this part of the URL.<br><br>
+						
+						<b>OPERATION-NAME=findCompletedItems –</b> The operation-name parameter is used to define what kind of call you are using.  In this case, we are concerned with finding completed items, but there are many other options you could choose from.<br><br>
+						
+						<b>SERVICE-NAME=FindingService –</b> The service-name parameter specifies which API service you are using.  We are using the Finding API but other options include, but are not limited to, Shopping API, Feedback API, Trading API, etc.<br><br>
+						
+						<b>SERVICE-VERSION=1.13.0 –</b> This is simply the version of the API you are working with.  Typically you want to use the most up-to-date version as possible in order to take advantage of all of the functionality.  As of this writing, the most up to date version is 1.13.0<br><br>
+						
+						<b>GLOBAL-ID=EBAY-US –</b> This value dictates which site your information will come from.  In our examples, we will be using the regular US version of ebay.com but you could change this value to find information for any of eBay’s sites.<br><br>
+						
+						<b>SECURITY-APPNAME= -</b> This is the parameter where you paste your AppID so eBay can trace all of your API calls.  There are limits to how many calls you can make, so be careful.
+						RESPONSE-DATA-FORMAT=XML – This parameter specifies the format of the response.  In our examples, we will be using XML but NV, JSON and SOAP are also available.<br><br>
+						
+						<b>REST-PAYLOAD –</b> This value simply separates one part of the URL from the other.  All of your custom parameters will come after this value.<br><br>
+						
+						<b>categoryId=11970 –</b> In order to make a call to findCompletedItems, you must include keywords or a categoryId value.  In this case, we included the categoryId value of 11970 which is the Seated Half Dollars category.  A complete list of categorIds can be found here: http://www.isoldwhat.com/getcats/<br>
+						</p>
+						
+						<br>
+						<br>
+						<a href="index.html" style="font-size:large;"><- Previous Step   |</a><a href="filters.html" style="font-size:large;">|   Next Step -></a>
+
+					</div>
+				</div>
+				<div class = "col-lg-3">
+							<div class = "list-group">
+								<a href="index.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Getting Started</h4>
+									<p class = "list-group-item-text">Sign up for your developer account and make your first API call</p>
+								</a>
+								<a href="calls.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">API Call Structure</h4>
+									<p class = "list-group-item-text">Learn how to create your own API call</p>
+								</a>
+								<a href="filters.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">More On API Calls</h4>
+									<p class = "list-group-item-text">Limit the data returned by your call</p>
+								</a>
+								<a href="xml.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Handling XML Output</h4>
+									<p class = "list-group-item-text">How to deal with the data eBay's API returns</p>
+								</a>
+								<a href="data.html" class = "list-group-item">
+									<h4 class = "list-group-item-heading">Completed Items Database</h4>
+									<p class = "list-group-item-text">Saving the XML into a MySQL database</p>
+								</a>
+							</div>
+							</div>
+						</div>
+			</div>
+		</div>
+
+		
+	</body>
+
+</html>
